@@ -1,0 +1,26 @@
+{
+  "name": "toplessons",
+  "version": "1.0.0",
+  "description": "Top Lessons",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "start": "npm run build:js && npm run watch:js && npx tailwindcss -i ./src/build/css/input.css -o ./src/css/style-main.css --minify --watch",
+    "watch:js": "chokidar 'src/js/**/*.js' -c 'npm run build:js'",
+    "build:js": "esbuild ./src/js/custom.js --bundle --minify --sourcemap --outfile=./src/build/js/custom.min.js"
+  },
+  "author": "Katerina Pitsigavdaki",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "autoprefixer": "^10.4.14",
+    "chokidar-cli": "^3.0.0",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "alpinejs": "^3.10.5",
+    "esbuild": "^0.15.12",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^8.4.4"
+  }
+}
