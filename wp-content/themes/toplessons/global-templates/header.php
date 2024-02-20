@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="<?php echo $favicon['url']; ?>">
     <?php wp_head() ?>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/wp-content/themes/ergasiesmathitwn/style-main.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/toplessons/build/input.css" type="text/css" />
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

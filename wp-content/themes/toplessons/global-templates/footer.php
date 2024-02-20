@@ -6,8 +6,7 @@
 
 </main>
 
-    <script src="/wp-content/themes/toplessons/src/js/custom.js" type="text/javascript"></script>
-    <script src="/wp-content/themes/toplessons/src/js/video.js" type="text/javascript"></script>
+    <script src="/wp-content/themes/toplessons/build/src/js/custom.min.js" type="text/javascript"></script>
 
     <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');</script>
     <!-- Swiper JS -->

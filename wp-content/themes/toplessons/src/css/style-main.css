@@ -3,53 +3,19 @@
 @tailwind utilities;
 
 @layer components {
-    .b-title {
-        @apply py-4 text-center md:text-left font-bold max-w-lg mb-4 mx-auto md:mx-0 leading-tight;
-    }
-    .all-title {
-        @apply py-4 text-center font-bold max-w-lg mx-auto leading-tight;
-    }
-    .p-tag {
-        @apply text-center md:text-left leading-tight;
-    }
-    p {
-        @apply text-base font-body leading-tight;
-    }
-    .link {
-        @apply hover:text-[#316ea0] hover:underline hover:font-bold;
-    }
+    /*.b-title {*/
+    /*    @apply py-4 text-center md:text-left font-bold max-w-lg mb-4 mx-auto md:mx-0 leading-tight;*/
+    /*}*/
 }
 
 @layer base {
-    .big-title {
-        font-size: calc(16px + (50 - 16) * (100vw - 320px) / (1920 - 320)) !important;
-    }
-    .hero-title {
-        font-size: calc(16px + (45 - 16) * (100vw - 320px) / (1920 - 320)) !important;
-    }
-    .basic-title {
-        font-size: calc(16px + (25 - 16) * (100vw - 320px) / (1920 - 320)) !important;
-    }
+    /*.big-title {*/
+    /*    font-size: calc(16px + (50 - 16) * (100vw - 320px) / (1920 - 320)) !important;*/
+    /*}*/
 }
 
 html {
     scroll-behavior: smooth;
-}
-.single-post a:hover {
-    color: #316ea0;
-    text-decoration: underline;
-    font-weight: bold;
-}
-.reveal{
-    position: relative;
-    transform: translateY(150px);
-    opacity: 0;
-    transition: 1s all ease;
-}
-
-.reveal.active{
-    transform: translateY(0);
-    opacity: 1;
 }
 .mute-bt,
 .mute-bt.stop,
@@ -79,32 +45,6 @@ html {
 .mute-bt.stop {
     background-image: url("https://api.iconify.design/octicon:unmute-24.svg?color=%23ffffff");
     left: 5%;
-}
-
-#menu-main li a {
-    font-size: calc(16px + (28 - 16) * (100vw - 320px) / (1920 - 320)) !important;
-    padding: 15px 10px;
-}
-#menu-other-menu a, #menu-other-menu-1 a {
-    text-transform: uppercase;
-}
-#menu-footer-copyright li {
-    display: inline-block !important;
-}
-.mobile-menu {
-    -webkit-animation: slide 0.5s forwards;
-    -webkit-animation-delay: 2s;
-    animation: slide 0.5s forwards;
-    animation-delay: 2s;
-}
-.sticky-header {
-    position: fixed !important;
-    left: 0;
-    top: 0 !important;
-    z-index: 9;
-    width: 100%;
-    background: white;
-    transition: 0.2s;
 }
 @media (min-width: 768px) {
     .even .image {
