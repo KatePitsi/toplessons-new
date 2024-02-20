@@ -62,6 +62,6 @@
 
     });
 
-    console.log('katerina test new');
+    console.log('0000');
 
 })(jQuery);

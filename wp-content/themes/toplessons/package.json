@@ -4,8 +4,9 @@
   "description": "Top Lessons",
   "main": "tailwind.config.js",
   "scripts": {
-    "start": "npm run build:js && npm run watch:js && npx tailwindcss -i ./src/build/css/input.css -o ./src/css/style-main.css --minify --watch",
-    "watch:js": "chokidar 'src/js/**/*.js' -c 'npm run build:js'",
+    "start": "npm run watch:css && npm run watch:js",
+    "watch:css": "npx tailwindcss -i ./src/css/style-main.css -o ./src/build/css/input.css --minify --watch",
+    "watch:js": "npx chokidar 'src/js/**/*.js' -c 'npm run build:js'",
     "build:js": "esbuild ./src/js/custom.js --bundle --minify --sourcemap --outfile=./src/build/js/custom.min.js"
   },
   "author": "Katerina Pitsigavdaki",

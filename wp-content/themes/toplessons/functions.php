@@ -83,41 +83,96 @@ if( function_exists('acf_add_options_page') ) {
 
 
 function create_team() {
-
-    register_post_type( 'team',
+    // Register Custom Post Type
+    register_post_type('team',
         array(
             'labels' => array(
-                'name' => __( 'Teams' ),
-                'singular_name' => __( 'Team' )
+                'name' => __('Teams'),
+                'singular_name' => __('Team')
             ),
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'team'),
             'show_in_rest' => true,
-            'supports' => array('title','thumbnail','editor','page-attributes','excerpt'),
+            'supports' => array('title', 'thumbnail', 'editor', 'page-attributes', 'excerpt'),
+            'menu_icon' => 'dashicons-groups',
+        )
+    );
+
+    // Register Custom Taxonomy
+    register_taxonomy(
+        'team_category',
+        'team',
+        array(
+            'label' => __('Team Categories'),
+            'rewrite' => array('slug' => 'team-category'),
+            'hierarchical' => true,
+            'show_in_rest' => true,
         )
     );
 }
-add_action( 'init', 'create_team' );
+add_action('init', 'create_team');
 
-function create_reviews() {
-
-    register_post_type( 'review',
+function create_lessons() {
+    // Register Custom Post Type
+    register_post_type('lessons',
         array(
             'labels' => array(
-                'name' => __( 'Reviews' ),
-                'singular_name' => __( 'Review' )
+                'name' => __('Lessons'),
+                'singular_name' => __('Lesson')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'lessons'),
+            'show_in_rest' => true,
+            'supports' => array('title', 'thumbnail', 'editor', 'page-attributes', 'excerpt'),
+            'menu_icon' => 'dashicons-media-document',
+        )
+    );
+
+    register_taxonomy(
+        'lessons_category',
+        'lessons',
+        array(
+            'label' => __('Lessons Categories'),
+            'rewrite' => array('slug' => 'lessons-category'),
+            'hierarchical' => true,
+            'show_in_rest' => true,
+        )
+    );
+}
+add_action('init', 'create_lessons');
+
+function create_reviews() {
+    // Register Custom Post Type
+    register_post_type('review',
+        array(
+            'labels' => array(
+                'name' => __('Reviews'),
+                'singular_name' => __('Review')
             ),
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'review'),
             'show_in_rest' => true,
-            'supports' => array('title','thumbnail','editor','page-attributes','excerpt'),
+            'supports' => array('title', 'thumbnail', 'editor', 'page-attributes', 'excerpt'),
+            'menu_icon' => 'dashicons-format-chat',
+        )
+    );
+
+    // Register Custom Taxonomy
+    register_taxonomy(
+        'review_category',
+        'review',
+        array(
+            'label' => __('Review Categories'),
+            'rewrite' => array('slug' => 'review-category'),
+            'hierarchical' => true,
+            'show_in_rest' => true,
         )
     );
 }
-add_action( 'init', 'create_reviews' );
-
+add_action('init', 'create_reviews');
 
 register_nav_menu('footer','Footer Menu');
 function custom_footer_menu() {
