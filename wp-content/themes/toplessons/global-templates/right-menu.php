@@ -1,5 +1,5 @@
 <div class="right-menu-dongle text-right" onclick="toggleRightDongle()">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 inline p-1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" /></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 inline p-1.5 border-solid border rounded-full border-black"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" /></svg>
 </div>
 
 <div class="shadow-xl right-dongle fixed top-0 right-0 h-full w-96 bg-white overflow-hidden transition-transform duration-500 transform translate-x-full z-50" id="rightDongle">
