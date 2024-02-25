@@ -1,9 +1,12 @@
 <nav class="top-0 relative px-4 pb-4 shadow-xl">
     <!--  Desktop Menu  -->
     <div class="desktop hidden md:block">
-        <div class="top-row my-auto">
-            <?php get_template_part( 'global-templates/contact-details-header' ); ?>
-        </div>
+
+        <?php if ( get_field('enable_top_infos', 'option') == true ) : ?>
+            <div class="top-row my-auto">
+                <?php get_template_part( 'global-templates/contact-details-header' ); ?>
+            </div>
+        <?php endif; ?>
         <div class="main-nav">
             <div class="my-auto grid grid-cols-1 md:grid-cols-7 gap-4 justify-between top-sticky">
                 <div class="logo md:col-span-1">
