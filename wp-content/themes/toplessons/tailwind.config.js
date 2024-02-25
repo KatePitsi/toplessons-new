@@ -1,20 +1,24 @@
 const { screens } = require("tailwindcss/defaultTheme");
 
 module.exports = {
-    // content: ["./**/*.html"],
-    content: ["./**/*.php"],
+    content: [
+        "./*.php",
+        "./global-templates/**/*.php",
+        "./templates/**/*.php",
+        "./src/**/*.{php,js}",
+        "./svg/social/*.svg.php",
+    ],
     theme: {
         extend: {
             fontFamily: {
-                body: ["Roboto", "sans-serif"]
+                body: ["Didact Gothic", "sans-serif"]
             },
             colors: {
                 body: "#3C3D46",
-                border: "#66464E",
-                highlight: "#316ea0"
+                highlight: "#ffb606"
             },
             backgroundImage: {
-                'newsletter': "url('/wp-content/uploads/2023/06/newsletter-bg-1.webp')",
+                // 'newsletter': "url('/wp-content/uploads/2023/06/newsletter-bg-1.webp')",
             },
         },
         screens: {

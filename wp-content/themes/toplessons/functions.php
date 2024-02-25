@@ -201,11 +201,19 @@ function custom_header_home_menu() {
     wp_nav_menu(array(
         'container' => '',
         'menu_id' => 'menu-main',
+        'menu_class' => 'm-auto inline-block w-100',
         'fallback_cb' => 'thesis_nav_menu',
         'theme_location' => 'header',
     ));
 }
 add_action('thesis_hook_header','custom_header_home_menu');
+function custom_nav_menu_class($classes, $item, $args, $depth) {
+    $classes[] = 'block md:inline my-auto px-2 text-sm relative';
+    $classes[] = 'menu-item-' . $item->ID;
+
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'custom_nav_menu_class', 10, 4);
 
 function get_teams( $args = null ) {
     $defaults = array(

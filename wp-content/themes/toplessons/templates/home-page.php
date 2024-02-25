@@ -28,6 +28,8 @@ get_header();
                 <?php endif; ?>
             </div>
 
+            <?php echo the_content();?>
+
         <?php else : ?>
 
             <div class="">

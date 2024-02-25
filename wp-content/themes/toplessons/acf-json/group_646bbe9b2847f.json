@@ -1,6 +1,6 @@
 {
     "key": "group_646bbe9b2847f",
-    "title": "Theme settings integration",
+    "title": "Theme Settings - Integration",
     "fields": [
         {
             "key": "field_646bbe9b846fb",
@@ -247,5 +247,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708252905
+    "modified": 1708855762
 }

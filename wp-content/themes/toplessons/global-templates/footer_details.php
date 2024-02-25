@@ -46,7 +46,7 @@
             <?php custom_footer_menu_copyright(); ?>
         </div>
         <div class="py-4 text-center md:text-right text-[#94a3b8e6] text-sm">
-            <?php echo get_field('details_copyright', 'option'); ?>
+            <?php echo '&copy ' . date("Y") . ' ' . get_field('details_copyright', 'option'); ?>
         </div>
     </div>
 </div>

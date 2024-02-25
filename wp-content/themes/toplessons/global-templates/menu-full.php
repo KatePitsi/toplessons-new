@@ -1,6 +1,9 @@
-<nav class="sticky top-0 relative px-4 py-4">
-    <div class="grid grid-cols-3 gap-2 justify-between">
-        <div>
+<nav class="top-0 relative px-4 pb-4">
+    <div class="top-row my-auto hidden md:block">
+        <?php get_template_part( 'global-templates/contact-details-header' ); ?>
+    </div>
+    <div class="main-nav">
+        <div class="inline md:hidden">
             <div class="right-0">
                 <button class="navbar-burger flex items-center text-black p-3 relative">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute animate-ping w-9 h-9 inline p-1.5 border-solid border rounded-full border-black"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
@@ -9,19 +12,24 @@
                 </button>
             </div>
         </div>
-        <div class="my-auto">
-            <a class="logo" href="<?php echo home_url(); ?>">
-                <?php $image = get_field('logo_main_logo', 'option'); if( !empty( $image ) ): ?>
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="white-logo w-full max-w-[8rem] md:max-w-[14rem] mx-auto" />
-                <?php endif; ?>
+        <div class="my-auto grid grid-cols-1 md:grid-cols-7 gap-4 justify-between">
+            <div class="logo col-span-1">
+                <a class="" href="<?php echo home_url(); ?>">
+                    <?php $image = get_field('logo_main_logo', 'option'); if( !empty( $image ) ): ?>
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="white-logo w-full max-w-[8rem] mx-auto" />
+                    <?php endif; ?>
 
-                <?php $image = get_field('logo_scrolled_logo', 'option'); if( !empty( $image ) ): ?>
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="hidden blue-logo w-full max-w-[8rem] md:max-w-[14rem] mx-auto" />
-                <?php endif; ?>
-            </a>
-        </div>
-        <div class="my-auto">
-            <?php get_template_part( 'global-templates/contact-details-header' ); ?>
+                    <?php $image = get_field('logo_scrolled_logo', 'option'); if( !empty( $image ) ): ?>
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="hidden blue-logo w-full max-w-[8rem] mx-auto" />
+                    <?php endif; ?>
+                </a>
+            </div>
+            <div class="hidden md:block menu col-span-5 my-auto">
+                <?php custom_header_home_menu();?>
+            </div>
+            <div class="hidden md:block col-span-1 my-auto mr-6">
+                <?php get_template_part( 'global-templates/right-menu' ); ?>
+            </div>
         </div>
     </div>
 </nav>
