@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
 @layer components {
-    /*.b-title {*/
-    /*    @apply py-4 text-center md:text-left font-bold max-w-lg mb-4 mx-auto md:mx-0 leading-tight;*/
-    /*}*/
+    .main-btn {
+        @apply text-base bg-highlight rounded-full py-4 px-8 font-bold my-4;
+    }
 }
 
 @layer base {
@@ -44,23 +44,17 @@ body {
     height: 60px;
     position: absolute;
     bottom: 25px;
-    z-index: 9999;
+    z-index: 9;
     cursor: pointer;
     max-width: 30px;
 }
 .play-bt {
     background-image: url("https://api.iconify.design/akar-icons:play.svg?color=%23ffffff");
+    left: 2%;
 }
 .pause-bt {
     background-image: url("https://api.iconify.design/akar-icons:pause.svg?color=%23ffffff");
-}
-.mute-bt {
-    background-image: url("https://api.iconify.design/carbon:volume-mute.svg?color=%23ffffff");
-    left: 5%;
-}
-.mute-bt.stop {
-    background-image: url("https://api.iconify.design/octicon:unmute-24.svg?color=%23ffffff");
-    left: 5%;
+    left: 2%;
 }
 @media (min-width: 768px) {
     .even .image {
