@@ -56,11 +56,11 @@ get_header();
 
 <?php get_template_part( 'global-templates/welcome' ); ?>
 
-<?php get_template_part( 'global-templates/banner' ); ?>
+<?php get_template_part( 'global-templates/lessons' ); ?>
 
-<?php get_template_part( 'global-templates/why-us' ); ?>
+<?php get_template_part( 'global-templates/map' ); ?>
 
-<?php get_template_part( 'global-templates/posts' ); ?>
+<?php get_template_part( 'global-templates/lessons-categories' ); ?>
 
 <?php get_template_part( 'global-templates/team' ); ?>
 

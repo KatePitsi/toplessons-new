@@ -32,6 +32,7 @@ body {
     right: 0;
     width: 100%;
     color: transparent;
+    padding-top: 5px;
 }
 .mute-bt,
 .mute-bt.stop,
@@ -56,11 +57,33 @@ body {
     background-image: url("https://api.iconify.design/akar-icons:pause.svg?color=%23ffffff");
     left: 2%;
 }
+.welcome-text ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.welcome-text p {
+    line-height: 2;
+}
+.welcome .content:after {
+    content: "line";
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-right: 2px solid #ffb606;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+}
 @media (min-width: 768px) {
     .even .image {
         order: 1;
     }
     .even .content {
         order: 2;
+    }
+}
+@media (max-width: 768px) {
+    .welcome .content:after {
+        border-right: 0;
     }
 }

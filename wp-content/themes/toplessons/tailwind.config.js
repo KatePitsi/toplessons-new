@@ -18,7 +18,7 @@ module.exports = {
                 highlight: "#ffb606"
             },
             backgroundImage: {
-                // 'newsletter': "url('/wp-content/uploads/2023/06/newsletter-bg-1.webp')",
+                'map-image': "url('/wp-content/uploads/2024/02/map.png')",
             },
         },
         screens: {

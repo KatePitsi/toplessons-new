@@ -201,14 +201,14 @@ function custom_header_home_menu() {
     wp_nav_menu(array(
         'container' => '',
         'menu_id' => 'menu-main',
-        'menu_class' => 'm-auto inline-block w-100',
+        'menu_class' => 'mx-auto my-auto text-center w-100',
         'fallback_cb' => 'thesis_nav_menu',
         'theme_location' => 'header',
     ));
 }
 add_action('thesis_hook_header','custom_header_home_menu');
 function custom_nav_menu_class($classes, $item, $args, $depth) {
-    $classes[] = 'block md:inline my-auto px-2 text-sm relative';
+    $classes[] = 'block md:inline my-auto px-2 text-xs relative uppercase font-normal';
     $classes[] = 'menu-item-' . $item->ID;
 
     return $classes;
@@ -226,6 +226,46 @@ function get_teams( $args = null ) {
         'meta_key'         => '',
         'meta_value'       => '',
         'post_type'        => 'team',
+        'suppress_filters' => true,
+    );
+
+    $parsed_args = wp_parse_args( $args, $defaults );
+    if ( empty( $parsed_args['post_status'] ) ) {
+        $parsed_args['post_status'] = ( 'attachment' === $parsed_args['post_type'] ) ? 'inherit' : 'publish';
+    }
+    if ( ! empty( $parsed_args['numberposts'] ) && empty( $parsed_args['posts_per_page'] ) ) {
+        $parsed_args['posts_per_page'] = $parsed_args['numberposts'];
+    }
+    if ( ! empty( $parsed_args['category'] ) ) {
+        $parsed_args['cat'] = $parsed_args['category'];
+    }
+    if ( ! empty( $parsed_args['include'] ) ) {
+        $incposts                      = wp_parse_id_list( $parsed_args['include'] );
+        $parsed_args['posts_per_page'] = count( $incposts );  // Only the number of posts included.
+        $parsed_args['post__in']       = $incposts;
+    } elseif ( ! empty( $parsed_args['exclude'] ) ) {
+        $parsed_args['post__not_in'] = wp_parse_id_list( $parsed_args['exclude'] );
+    }
+
+    $parsed_args['ignore_sticky_posts'] = true;
+    $parsed_args['no_found_rows']       = true;
+
+    $get_posts = new WP_Query;
+    return $get_posts->query( $parsed_args );
+
+}
+
+function get_lessons( $args = null ) {
+    $defaults = array(
+        'numberposts'      => -1,
+        'category'         => 0,
+        'orderby'          => 'date',
+        'order'            => 'DESC',
+        'include'          => array(),
+        'exclude'          => array(),
+        'meta_key'         => '',
+        'meta_value'       => '',
+        'post_type'        => 'lessons',
         'suppress_filters' => true,
     );
 
